@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Duration Based</title>
+    <!--/*/ <th:block th:include="@{fragment/header-includes} :: header-includes"></th:block> /*/-->
+</head>
+
+<body>
+    <!--/*/ <th:block th:include="@{fragment/global-header} :: header"></th:block> /*/-->
+    <div class="container">
+        <div class="row">
+            <form th:action="@{/checkSchedule}" th:object="${requestSchedule}" class="fluid-form mt-5">
+                <div class="form-group meterial-input">
+                    <input class="w-100" th:field="*{date}" id="date" type="date" placeholder="Date" required/>
+                    <label for="date">Date</label>
+                </div>
+                <div class="form-group meterial-input">
+                    <input class="w-100" th:field="*{startTime}" id="startTime" type="time" placeholder="Time" required/>
+                    <label for="startTime">Start Time</label>
+                </div>
+                <div class="form-group meterial-input">
+                    <input class="w-100" th:field="*{endTime}" id="endTime" type="time" placeholder="Time" required/>
+                    <label for="endTime">End Time</label>
+                </div>
+                <button type="submit" name="submit" class="col-12 btn btn-secondary font-weight-bold">Search</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="shadow-sm bg-white table-responsive mt-5">
+                    <h3 class="primary-background">Unable to Join</h3>
+                    <table class="table table-hover table-sm mb-0 table table-sm">
+                        <thead class="bg-primary text-white table__header">
+                            <tr>
+                                <th>Email</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body bg-white">
+                        <th:block th:each="member : ${unavailableMembers}">
+                            <tr>
+                                <td th:text=${member.email}></td>
+                                <td th:text=${member.contact}></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="float-right mt-3 btn btn-outline-secondary">Call All</button>
+            </div>
+            <div class="col-md-6">
+                <div class="shadow-sm bg-white table-responsive mt-5">
+                    <h3 class="primary-background">Able to Join</h3>
+                    <table class="table table-hover table-sm mb-0 table table-sm">
+                        <thead class="bg-primary text-white table__header">
+                            <tr>
+                                <th>Email</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body bg-white">
+                            <th:block th:each="member : ${availableMembers}">
+                                <tr>
+                                    <td th:text=${member.email}></td>
+                                    <td th:text=${member.contact}></td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="float-right mt-3 btn btn-outline-secondary">Call Meeting</button>
+            </div>
+        </div>
+    </div>
+</body>
+<!--/*/ <th:block th:include="@{fragment/footer-includes} :: footer-includes"></th:block> /*/-->
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Home</title>
+		<!--/*/ <th:block th:include="@{fragment/header-includes} :: header-includes"></th:block> /*/-->
+	</head>
+	<body>
+		<!--/*/ <th:block th:include="@{fragment/global-header} :: header"></th:block> /*/-->
+
+		<main>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-lg-8 col-xl-9 py-3">
+						<div class="service">
+							<h4 class="service__header font-weight-bold pt-3 pb-4">Category of Services</h4>
+							<div>
+								<ul class="d-flex flex-wrap list-unstyled service__list">
+									<li class="pr-sm-4 pb-4 service__item">
+										<a class="d-block py-5 px-3 service__link" href="/member/list">
+											<i class="fa fa-users d-block service__icon"></i>Information Management
+										</a>
+									</li>
+									<li class="pr-sm-4 pb-4 service__item">
+										<a class="d-block py-5 px-3 service__link" href="/fixSchedule">
+											<i class="fa fa-user-clock d-block service__icon"></i>Fixed Schedule
+										</a>
+									</li>
+									<li class="pr-sm-4 pb-4 service__item">
+										<a class="d-block py-5 px-3 service__link" href="/searchSchedule">
+											<i class="fa fa-stopwatch-20 d-block service__icon"></i>Search Schedule
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-lg-4 col-xl-3 py-3">
+				    	<div class="faq shadow-sm bg-white">
+					        <h4 class="faq__header p-3 font-weight-bold mb-0 d-flex justify-content-between">FAQ Hints <i class="far fa-comments"></i></h4>
+					        <div class="accordion">
+					            <div class="card">
+					            	<div class="p-3 d-flex align-items-baseline justify-content-between card-header" data-toggle="collapse" data-target="#collapseOne" role="button">What is Information Management?<i class="fas fa-chevron-down"></i>
+					                </div>
+					                <div id="collapseOne" class="collapse">
+					                    <div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="card">
+					            	<div class="p-3 d-flex align-items-baseline justify-content-between card-header" role="button" data-toggle="collapse" data-target="#collapseTwo">What is Fixed Schedule?<i class="fas fa-chevron-down"></i>
+					                </div>
+					                <div id="collapseTwo" class="collapse">
+					                    <div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+					                </div>
+					                
+					            </div>
+					            <div class="card">
+					            	<div class="p-3 d-flex align-items-baseline justify-content-between card-header" role="button" data-toggle="collapse" data-target="#collapseThree">What is Search Schedule?<i class="fas fa-chevron-down"></i></div>
+					                <div id="collapseThree" class="collapse">
+					                    <div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</body>
+	<!--/*/ <th:block th:include="@{fragment/footer-includes} :: footer-includes"></th:block> /*/-->
+</html>

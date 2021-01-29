@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Duration Based</title>
+    <!--/*/ <th:block th:include="@{fragment/header-includes} :: header-includes"></th:block> /*/-->
+</head>
+<body>
+    <!--/*/ <th:block th:include="@{fragment/global-header} :: header"></th:block> /*/-->
+	<div class="container">
+		<div class="row">
+			<form th:action="/searchSlot" th:object="${searchTime}" class="fluid-form mt-5">
+                <div class="form-group meterial-input">
+                    <input class="w-100" th:field="*{date}" id="date" type="date" placeholder="Time" />
+                    <label for="time">Date</label>
+                </div>
+				<div class="form-group meterial-input">
+				  <input class="w-100" th:field="*{duration}" id="time" type="number" placeholder="Time" />
+				  <label for="time">Time in minute</label>
+				</div>
+				<button type="submit" name="submit" class="col-12 btn btn-secondary font-weight-bold">Search</button>
+			</form>
+
+			<div class="shadow-sm bg-white table-responsive mt-5">
+                <table class="table table-hover table-sm mb-0 table table-sm">
+                    <thead class="bg-primary text-white table__header">
+                        <tr>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body bg-white">
+                        <th:block th:each="schedule : ${schedules}">
+                            <tr>
+                                <td><span th:text=${schedule.startTime}></span> - <span th:text=${schedule.endTime}></span></td>
+                                <td>
+                                    <span>
+                                        <div class="ml-auto dropdown-customize dropdown">
+                                            <button aria-haspopup="true" class="btn-outline-secondary btn">Fix</button>
+                                        </div>
+                                    </span>
+                                </td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+	</div>
+</body>
+<!--/*/ <th:block th:include="@{fragment/footer-includes} :: footer-includes"></th:block> /*/-->
+</html>

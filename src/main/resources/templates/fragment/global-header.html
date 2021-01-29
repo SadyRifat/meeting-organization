@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <div th:fragment="header">
+        <header class="app__header py-1 shadow-sm">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <div class="d-flex">
+                            <h1 class="text-center"><a href="/"> <img alt="LOGO" th:src="@{/icon/icon.png}" height="64"></a></h1>
+                        </div>
+                    </div>
+                    <div class="col-9 text-right">
+                        <div class="d-block d-sm-flex justify-content-end align-items-center">
+                            <div class="mb-2 mb-sm-0 d-flex justify-content-end align-items-center">
+                                <button class="mr-2 btn btn-secondary text-white">
+                                    <i class="fa fa-user"></i>
+                                    <span class=""> System Admin</span>
+                                </button>
+                                <a class="btn btn-outline-primary d-flex align-items-center">
+                                    <i class="fa fa-sign-out"></i> Sign out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

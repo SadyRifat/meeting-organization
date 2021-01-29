@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Login</title>
+		<!--/*/ <th:block th:include="@{fragment/header-includes} :: header-includes"></th:block> /*/-->
+	</head>
+	<body>
+		<div class="app">
+			<div class="app-container">
+				<div class="w-100">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6 col-md-8 col-12 mx-auto">
+								<h1 class="text-center"><img alt="LOGO" th:src="@{/icon/icon.png}" height="102"></h1>
+								<h3 class="primary-text text-center py-3">Welcome to the Tool</h3>
+								<div class="card-body p-4 p-sm-5 border bg-white shadow p-3 mb-5 rounded">
+									<form th:action="@{/authenticateUser}" th:object="${credentials}" method="post">
+										<div class="form-group fontuser">
+											<label class="control-label label-style" for="exampleInputEmail1">Email address
+												<span class="text-danger">*</span>
+											</label>
+											<input type="email" th:field="*{userName}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+											<i class="fa fa-envelope-o"></i> 
+										</div>
+										<div class="form-group fontuser">
+											<label  class="label-style" for="exampleInputPassword1">Password
+												<span class="text-danger">*</span>
+											</label>
+											<input type="password" th:field="*{password}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+											<i class="fa fa-key"></i>
+										</div>
+										<button type="submit" class="btn btn-block text-white btn-secondary mt-4 p-2 font-weight-bold">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--/*/ <th:block th:include="@{fragment/footer-includes} :: footer-includes"></th:block> /*/-->
+</html>
